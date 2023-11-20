@@ -19,6 +19,10 @@ await page.fill('input[id=loginpassword]', "123456")
 
 // Click Login button
 await page.click('button[type="button"][onclick="logIn()"]')
+
+// Verify logout button presence
+const logoutbutton = await page.locator('[id="logout2"]')
+await expect(await logoutbutton.innerText()).toBe("Log out")
 await page.waitForTimeout(2000);
 
 })
