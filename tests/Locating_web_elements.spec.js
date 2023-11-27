@@ -25,8 +25,7 @@ test ("locating web elements", async({page})=>{
 
     await page.getByRole('button', {type:'submit'}).click()
 
-    const text = await page.locator('span>h6').textContent()
-    console.log(text)
-
+    await expect(page.locator('span>h6')).toHaveText('Dashboard')
+    
 
 })
